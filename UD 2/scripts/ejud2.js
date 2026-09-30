@@ -51,3 +51,22 @@ let anyosFuturo = Number(prompt("Introduce un número del 1 al 10:"));
 console.log(`Nombre: ${nombre}, Apellidos: ${apellidos}, Edad: ${edad}`);
 document.write(`<h3>Nombre: ${nombre}, Apellidos: ${apellidos}, Edad: ${edad}</h3>`);
 alert(`Dentro de ${anyosFuturo} años tendrás ${edad + anyosFuturo} años`);
+
+/* Ejercicio 5
+Pide al usuario su nombre, una afición y si le gusta programar usando confirm(). 
+Muestra en un párrafo del documento un texto que combine los tres datos 
+usando un único template literal.*/
+
+let nombreUsuario = parseInt(prompt("¿Cómo te llamas?"));
+let aficion = prompt("¿Cuál es tu afición favorita?");
+let leGustaProgramar = confirm("¿Te gusta programar?");
+
+document.write(`<p>${nombreUsuario} tiene como afición ${aficion} y es ${leGustaProgramar} que le guste programar.</p>`);
+
+/*Ejercicio 6Pide al usuario un string, 
+Muestra en el documento la posición que ocupa la primera “a”*/
+
+let textoBuscarA = prompt("Introduce un texto:");
+let posicionA = textoBuscarA.indexOf("a");
+
+document.write(`<p>La primera "a" está en la posición: ${posicionA}</p>`);
