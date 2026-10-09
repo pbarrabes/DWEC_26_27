@@ -113,3 +113,96 @@ let cadenaBuscada = prompt("Introduce el texto a buscar:");
 let numeroOcurrencias = cadenaPrincipal.split(cadenaBuscada).length - 1;
 
 console.log(`"${cadenaBuscada}" aparece ${numeroOcurrencias} veces en "${cadenaPrincipal}"`);
+
+/*Ejercicio 11 ver javascript.info/operators#tasks
+Solucion. 
+La suma con una cadena "" + 1 convierte 1 a un string: "" + 1 = "1", y luego tenemos "1" + 0, la misma regla se aplica.
+La resta - (como la mayoría de las operaciones matemáticas) sólo funciona con números, convierte una cadena vacía "" a 0.
+La suma con una cadena concatena el número 5 a la cadena.
+La resta siempre convierte a números, por lo tanto hace de " -9 " un número -9 (ignorando los espacios que lo rodean).
+null se convierte en 0 después de la conversión numérica.
+undefined se convierte en NaN después de la conversión numérica.
+Al convertir una cadena en número, se ignoran los espacios en blanco al principio y al final (espacio común " ", tabulador \t, salto de línea \n, etc.). Si la cadena contiene solo ellos, queda vacía y se con∫
+
+/* Ejercicio 12 ver javascript.info/operators#tasks
+
+simplemente convertir a numero con Number o parseInt. */
+
+/* Ejercicio 13
+¿Cuáles son los valores finales de todas las variables a, b, c y d después del código a continuación?
+let a = 1, b = 1;
+let c = ++a; // ?
+let d = b++; // ? */
+
+// el resultado es : a=2,b=2,c=2 d=1. Como ya comente en clase lo importante es ver la precedencia del operador ++ segun donde este puesto
+//let a ="Pepito";
+//console.log(a==NaN) //da false Mon dieu. Hay que utilizar isNaN()
+//console.log(isNaN(a)); 
+//isNaN(a)?error:accion;
+
+/*  ejercicio 15 
+Escribe en un comentario el resultado que esperas de cada expresión y el tipo de dato del resultado. Después compruébalo por consola usando typeof.
+"5" + 3
+"5" - 3
+"5" * "2"
+true + 1
+"3" + 4 + 5
+3 + 4 + "5" */
+
+// Similar al anterior
+
+/* Ejercicio 16 Dado el siguiente código, muestra por consola el resultado de cantidad || 10 y de cantidad ?? 10 para cada una de las variables. ¿En qué casos dan resultados distintos? Si el valor 0 fuera una cantidad válida, ¿qué operador usarías? Razona la respuesta.
+let cantidad1;
+let cantidad2 = null;
+let cantidad3 = 0;
+let cantidad4 = "";
+let cantidad5 = 5; */
+
+let cantidad1;
+let cantidad2 = null;
+let cantidad3 = 0;
+let cantidad4 = "";
+let cantidad5 = 5;
+
+console.log(cantidad1 || 10, cantidad1 ?? 10); // 10 10
+console.log(cantidad2 || 10, cantidad2 ?? 10); // 10 10
+console.log(cantidad3 || 10, cantidad3 ?? 10); // 10 0
+console.log(cantidad4 || 10, cantidad4 ?? 10); // 10 ""
+console.log(cantidad5 || 10, cantidad5 ?? 10); // 5 5 
+
+/* Difieren con 0 y con "". || devuelve el valor por defecto con cualquier valor falsy; ?? solo con null o undefined.
+ Si 0 es una cantidad válida hay que usar ??. */
+
+/* Ejercicio 17  Crea un programa que pida al usuario un número entero de minutos y muestre cuántas horas y minutos son. 
+ Por ejemplo, para 135 debe mostrar "2 horas y 15 minutos". Solo puedes usar los operadores aritméticos. 
+ Antes de programarlo, comprueba por consola cuánto vale 135 / 60. ¿Qué diferencia hay con Java? */
+let minutos = Number(prompt("Introduce un número de minutos"));
+let resto = minutos % 60;
+let horas = (minutos - resto) / 60;
+alert(`${horas} horas y ${resto} minutos`); 
+
+/* Ejercicio 18 Escribe en un comentario qué crees que mostrará cada console.log. Después ejecútalo. Si alguna línea produce un error, 
+explica por qué y coméntala para que el resto del código pueda ejecutarse.*/
+	
+/* console.log(a);
+var a = 5;
+ 
+if (true) {
+  		var x = 1;
+  		let y = 2;
+}
+console.log(x);
+console.log(y);
+ 
+for (var i = 0; i < 3; i++) {
+
+}
+console.log(i);
+ 
+for (let j = 0; j < 3; j++) {
+    
+}
+console.log(j); */
+
+
+
