@@ -245,7 +245,7 @@ console.log(suma1); */
 
 /* Ejercicio 29 */
 
-const suma= (a,b)=> a+b;
+/* const suma= (a,b)=> a+b;
 const multiplicacion =(a,b)=> a*b;
 
 function operacionesEncadenadas(a, b, op1, op2, mostrar){
@@ -255,4 +255,48 @@ function operacionesEncadenadas(a, b, op1, op2, mostrar){
 }
 
 operacionesEncadenadas(3, 4, suma, multiplicar, (r1, r2) => console.log(r1,r2));
-operacionesEncadenadas(3,6,suma,(x,y)=>y==0?"":x/y,(r1, r2) => console.log(r1,r2))
+operacionesEncadenadas(3,6,suma,(x,y)=>y==0?"":x/y,(r1, r2) => console.log(r1,r2)) */
+
+
+/* Ejercicio 30 */// FALTA PONERLO 
+
+/* Ejercicio 31 Crea un array de 5 números de dos formas distintas. 
+Investiga qué ocurre al crear un array con el constructor pasándole un único número, y cómo crear correctamente un array que contenga solo ese número. 
+Explica la diferencia en un comentario. */
+
+/* const array1 = [3,5,6,5];
+const array2 = new Array(3, "Hola");
+
+const lista= Array.from(document.getElementById("lista")); */
+
+/* Ejercicio 32 
+Ordena el array [10, 9, 1, 100, 25] 
+con el método de ordenación de Array sin argumentos. 
+Explica por qué el resultado no es el esperado y corrígelo para que se ordene de menor a mayor. 
+Después ordénalo de mayor a menor. */
+
+const array = [10, 9, 1, 100, 25];
+
+console.log(array.sort((a,b)=>a-b));  // Necesitamos pasar una funcion de ordenacion , si no ordena alfabeticamente
+
+
+// Si no quiero modificar el original
+
+console.log([...array].sort((a,b)=> a-b))
+
+/* Ejercicio 33 
+Crea una función sumar(numeros) que devuelva la suma de todos los elementos de un array numérico. 
+Con un array vacío debe devolver 0. */
+
+//Opcion a primera vista recorrerlo y sumar
+
+// opcio usar metodo reduce de Array
+
+const suma = (array)=> array.reduce((acc,currentValue)=>acc+currentValue,0);
+
+
+
+
+suma([3,6,9]);
+suma();// ojo con este caso
+
