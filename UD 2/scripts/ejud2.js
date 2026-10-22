@@ -300,3 +300,16 @@ const suma = (array)=> array.reduce((acc,currentValue)=>acc+currentValue,0);
 suma([3,6,9]);
 suma();// ojo con este caso
 
+
+
+/*Ejercicio 35*/
+/* Crea una función palabraMasLarga(palabras) 
+que devuelva la palabra más larga de un array de palabras; 
+si hay empate, la primera. Resuélvelo de dos formas distintas. */
+
+const palabraMasLarga= (palabras)=>{
+
+   palabras.reduce((acc,currentValue)=>{
+      acc.length<currentValue.length?acc=currentValue:acc;
+   },"")
+}
