@@ -260,6 +260,32 @@ operacionesEncadenadas(3,6,suma,(x,y)=>y==0?"":x/y,(r1, r2) => console.log(r1,r2
 
 /* Ejercicio 30 */// FALTA PONERLO 
 
+/* Escribe una funcion evaluarNota(nota,siAprueba,siSuspende,siError) que : 
+Si nota es mayor o igual que 5 , ejecute el callback siAprueba pasandole la nota.
+Si nota es menor que 5, ejecute  el callback siSuspende pasandole una nota.
+Si la nota no está entre 0 y 10, muestre un mensaje de error por consola y no ejecute ninguna acción. */
+
+/* 
+function evaluarNota(nota,siAprueba,siSuspende,siError){
+    if(nota<0||nota >10){
+        siError(nota);
+    }else if(nota<5){
+        siSuspende(nota);
+    }else{
+        siAprueba(nota)
+    }
+}
+
+function felicitar(n) { console.log(`Enhorabuena, has aprobado con un ${n}`); }
+const animar = function (n) { console.log(`Has sacado un ${n}, ¡a por la recuperación!`); };
+
+evaluarNota(7, felicitar, animar);
+evaluarNota(6,
+  function (n) { console.log(`Aprobado: ${n}`); },
+  function (n) { console.log(`Suspenso: ${n}`); });
+evaluarNota(12, n => console.log(`Aprobado: ${n}`), n => console.log(`Suspenso: ${n}`),(n)=> console.error(`${n} no es una nota valida`)); */
+
+
 /* Ejercicio 31 Crea un array de 5 números de dos formas distintas. 
 Investiga qué ocurre al crear un array con el constructor pasándole un único número, y cómo crear correctamente un array que contenga solo ese número. 
 Explica la diferencia en un comentario. */
@@ -275,14 +301,14 @@ con el método de ordenación de Array sin argumentos.
 Explica por qué el resultado no es el esperado y corrígelo para que se ordene de menor a mayor. 
 Después ordénalo de mayor a menor. */
 
-const array = [10, 9, 1, 100, 25];
+/* const array = [10, 9, 1, 100, 25];
 
-console.log(array.sort((a,b)=>a-b));  // Necesitamos pasar una funcion de ordenacion , si no ordena alfabeticamente
+console.log(array.sort((a,b)=>a-b));  */ // Necesitamos pasar una funcion de ordenacion , si no ordena alfabeticamente
 
 
 // Si no quiero modificar el original
 
-console.log([...array].sort((a,b)=> a-b))
+/* console.log([...array].sort((a,b)=> a-b)) */
 
 /* Ejercicio 33 
 Crea una función sumar(numeros) que devuelva la suma de todos los elementos de un array numérico. 
@@ -292,13 +318,21 @@ Con un array vacío debe devolver 0. */
 
 // opcio usar metodo reduce de Array
 
-const suma = (array)=> array.reduce((acc,currentValue)=>acc+currentValue,0);
+/* const suma = (array)=> array.reduce((acc,currentValue)=>acc+currentValue,0)//;
 
 
+console.log(suma([3,6,9]));
+console.log(suma());// ojo con este caso que da un error ya que el array es undefined y el metodo reduce da error. Habria que dar un valor por defecto al array en la def de la funcion */
+ 
 
+/* Ejercicio 34 
+Crea una función pares(numeros) que devuelva un nuevo array con los números pares. 
+El array original no debe modificarse. */
 
-suma([3,6,9]);
-suma();// ojo con este caso
+/* const pares=(array=[])=> array.filter((el)=>el%2===0);
+
+console.log(pares ([2,5,7,8])); */
+
 
 
 
@@ -307,9 +341,39 @@ suma();// ojo con este caso
 que devuelva la palabra más larga de un array de palabras; 
 si hay empate, la primera. Resuélvelo de dos formas distintas. */
 
-const palabraMasLarga= (palabras)=>{
-
-   palabras.reduce((acc,currentValue)=>{
-      acc.length<currentValue.length?acc=currentValue:acc;
-   },"")
+// recorriendo el Array con for of
+/* const palabraMasLarga =(palabras)=> {
+   let masLarga="";
+   for (const palabra of palabras) {
+      if(palabra.length>masLarga.length){
+         masLarga=palabra;
+      }
+   }
+   return masLarga;
 }
+
+// Alternativa con reduce
+const palabraMasLarga2= (palabras)=> palabras.reduce((acc,currentValue)=>
+      acc.length<currentValue.length?acc=currentValue:acc
+   ,"")
+
+console.log(palabraMasLarga(["sol", "casa", "árbol", "perro"]));  // árbol
+console.log(palabraMasLarga2(["sol", "casa", "árbol", "perro"])); // árbol
+ */
+
+/* Ejercicio 35 
+Crea una función sinDuplicados(array) que devuelva un nuevo array sin elementos repetidos. 
+Ampliación: resuélvelo de una segunda forma diferente. */
+
+// Usando Set
+/* function sinDuplicados(array) {
+  return [...new Set(array)];//o return Array.from(new Set(array))
+}
+
+function sinDuplicados2(array){
+   return array.filter((elem,i)=>array.indexOf(elem)===i)// Si es el primero lo deja ya que cumple la condicion, si es uno que va despues no cumple la condicion.
+}
+const array=[2,2,3];
+console.log(sinDuplicados(array))
+console.log(sinDuplicados2(array)) */
+
