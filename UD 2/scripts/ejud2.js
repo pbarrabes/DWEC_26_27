@@ -482,12 +482,49 @@ mostrarArray(países); */
 } */
 
   //extraer y Unir
-function extraerYUnir(array, otros) {
+/* function extraerYUnir(array, otros) {
   const primeros = array.slice(0, 5);
   const ultimos = array.slice(-3);
   const unidos = array.concat(otros);
   mostrarArray(primeros);
   mostrarArray(ultimos);
   mostrarArray(unidos);
-  return [primeros, ultimos, unidos];
-}
+  return [primeros, ultimos, unidos]; 
+}*/
+
+/* Ejercicio 38 
+Define una función a la que le pasaremos un número y el tipo de redondeo a realizar. 
+La función devolverá el resultado del redondeo y además mostrará el valor del redondeo en el documento junto a un mensaje 
+indicando el tipo de redondeo.  */
+
+/* function redondeo(numero,tipo){
+    if(isNaN(numero)){
+        document.write(`<p>El valor ${numero} no es un numero</p>`);
+        return
+    }else {
+    let redondeo;
+    numero=parseFloat(numero);
+    switch (tipo) {
+        case "arriba":
+            redondeo=Math.ceil(numero);
+            break;
+        case "abajo":
+            redondeo=Math.floor(numero);
+            break;
+        case "normal":
+            redondeo=Math.round(numero);
+            break;
+        default:
+            redondeo="Tipo de redondeo no valido";
+            break;
+    }
+    document.write(`<p>El redondeo de ${numero} es ${redondeo} con el tipo de redondeo ${tipo}</p>`);
+    return redondeo;
+    }
+} */
+//ejemplos de uso
+// redondeo(3.3,"arriba");
+// redondeo(-2.5,"normal");
+/* let numero=(prompt("Dime un numero"));
+let tipoRedondeo=prompt("Dime un tipo de redondeo ("+"ceil, floor, round"+"))");//Lo pregunta igual a pesar de que no sea corecto el numero.
+redondeo(numero, tipoRedondeo);  */
