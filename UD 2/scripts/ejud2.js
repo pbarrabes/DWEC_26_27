@@ -361,7 +361,7 @@ console.log(palabraMasLarga(["sol", "casa", "árbol", "perro"]));  // árbol
 console.log(palabraMasLarga2(["sol", "casa", "árbol", "perro"])); // árbol
  */
 
-/* Ejercicio 35 
+/* Ejercicio 36 
 Crea una función sinDuplicados(array) que devuelva un nuevo array sin elementos repetidos. 
 Ampliación: resuélvelo de una segunda forma diferente. */
 
@@ -377,3 +377,117 @@ const array=[2,2,3];
 console.log(sinDuplicados(array))
 console.log(sinDuplicados2(array)) */
 
+/* Ejercicio 37 */
+
+const países = ["México", "Japón", "Italia", "Australia", "Brasil", "Canadá", "Francia", "Alemania", "India", "Argentina", "España", "China", "Sudáfrica", "Rusia", "Corea del Sur", "Reino Unido", "Estados Unidos", "Indonesia", "Egipto", "Turquía"];
+
+//mostrarArray
+
+ function mostrarArray(array){
+   let html=`<p> Numero de elementos del Array:${array.length}</p><ol>`;
+   array.forEach(element => {
+      html+=`<li>${element}</li>`
+   });
+   html+="</ol>"
+   document.body.innerHTML+=html;
+}
+
+mostrarArray(países); 
+
+//mostrarArrayInvertido
+/* function mostrarArrayInvertido(array){
+   mostrarArray(array.reverse());
+}
+
+function mostrarArrayInvertidoSinModificar(array){
+   mostrarArray([...array].reverse());
+}
+
+function mostrarArrayOrdenado(array){
+    mostrarArray([...array].sort((a,b)=>a.localeCompare(b)))
+}
+mostrarArrayInvertidoSinModificar(países)
+mostrarArrayOrdenado(países);
+console.log(países); */
+
+
+//Agregar Elemento
+
+/* function agregarElemento(array,elemento,indice){
+   if(indice=="principio"){
+      array.unshift(elemento)
+      return 0;
+   }
+   else if(indice=="fin"){
+      return array.push(elemento)
+
+   }else if(indice<0|| indice>array.length){
+      return -1;
+   }else{
+      array.splice(indice,0,elemento)
+      return indice;
+   }
+}
+mostrarArray(países);
+console.log(agregarElemento(países, "chiquitistan", "fin"))
+mostrarArray(países); */
+
+//Eliminar por posición
+
+/* function eliminarPorPosición(array,indice){
+if(indice=="principio"){
+      return array.shift()
+      
+   }
+   else if(indice=="fin"){
+      return array.pop()
+   }else if(indice<0|| indice>array.length){
+      return -1;
+   }else{
+      return array.splice(indice,1)
+   
+   }
+}
+
+mostrarArray(países);
+console.log(eliminarPorPosición(países, 3))
+mostrarArray(países); */
+
+//buscarPais
+
+/* function buscarPais(array, pais) {
+  return array.indexOf(pais);
+} */
+//Ampliacion . La gracia es usar localeCompare con el uso del parametro options con {sensitivity: "base"} junto con findIndex que 
+
+/* function buscarPaisFlexible(array, pais) {
+  return array.findIndex(p => p.localeCompare(pais, "es", { sensitivity: "base" }) === 0);
+} */
+
+//agregarPais
+/* function agregarPais(array, pais) {
+  const pos = buscarPais(array, pais);//Podriamos usar la ampliacion
+  if (pos !== -1) return pos;
+  array.push(pais);
+  return array.length - 1;
+}
+ */
+//eliminarPais
+/* function eliminarPais(array, pais) {
+  const pos = buscarPais(array, pais);
+  if (pos !== -1) {
+    array.splice(pos, 1);
+  }
+  return pos;
+} */
+
+  //extraer y Unir
+function extraerYUnir(array, otros) {
+  const primeros = array.slice(0, 5);
+  const ultimos = array.slice(-3);
+  const unidos = array.concat(otros);
+  mostrarArray(primeros);
+  mostrarArray(ultimos);
+  mostrarArray(unidos);
+  return [primeros, ultimos, unidos];
+}
