@@ -528,3 +528,47 @@ indicando el tipo de redondeo.  */
 /* let numero=(prompt("Dime un numero"));
 let tipoRedondeo=prompt("Dime un tipo de redondeo ("+"ceil, floor, round"+"))");//Lo pregunta igual a pesar de que no sea corecto el numero.
 redondeo(numero, tipoRedondeo);  */
+
+
+/* Ejercicio 39 */ 
+/* Define una función a la que le pasaremos dos enteros (limite inferior y límite superior) 
+y la función nos devolverá una entero aleatorio en el rango [limiteInferior,limiteSuperior). 
+Además mostrará en el documento un mensaje indicando el número aleatorio y el rango en el que se encuentra. */
+
+/* function aleatorio(inferior,superior){
+    if (!Number.isInteger(inferior) || !Number.isInteger(superior)) {
+        alert('Error: los límites deben ser números enteros');
+        return null;
+    }
+    else if(inferior>=superior){
+        alert('Error:Los limites no estan bien definidos')
+        return null;
+    }else{
+        let numero= Math.floor(Math.random()*(superior-inferior)+inferior) //El limite superior no saldra nunca
+        document.write(`Número aleatorio: ${numero} (rango [${inferior}, ${superior}))`)
+        return numero;
+    }
+}
+aleatorio(-2,6); */
+
+/* Ejercicio 40
+Define una función a la que le pasaremos un ángulo y la función trigonométrica a aplicar 
+y nos devolverá el resultado de aplicar la función trigonométrica  
+y mostrará en el documento la operación aplicada con el resultado. */
+
+/* function trigonometrica(angulo,funcion){
+    switch (funcion) {
+        case "sin":
+            document.write(`<p>El seno de ${angulo} es ${Math.sin(angulo*Math.PI/180)}</p>`);//angulo hay que psarlo a radianes
+            break;
+        case "cos":
+            document.write(`<p>El coseno de ${angulo} es ${Math.cos(angulo*Math.PI/180)}</p>`);
+            break;
+        case "tan":
+            document.write(`<p>La tangente de ${angulo} es ${Math.tan(angulo*Math.PI/180)}</p>`);
+            break;
+    }
+} */
+/* let angulo=parseInt(prompt("Dime un angulo en grados"));
+let funcion=prompt("Dime una funcion trigonometrica (sin, cos, tan)");
+trigonometrica(angulo,funcion); */
