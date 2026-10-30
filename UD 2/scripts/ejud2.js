@@ -572,3 +572,92 @@ y mostrará en el documento la operación aplicada con el resultado. */
 /* let angulo=parseInt(prompt("Dime un angulo en grados"));
 let funcion=prompt("Dime una funcion trigonometrica (sin, cos, tan)");
 trigonometrica(angulo,funcion); */
+
+/* Ejercicio 41 
+Define una función que muestre la fecha actual en diferentes formatos
+6/10/2021
+Wed Oct 06 2021.
+Wed, 06 Oct 2021 15:54:47 GMT */
+
+
+/* function fechaActual(){
+    let fecha=new Date();
+    document.write(`<p>${fecha.toLocaleDateString()}</p>`);// Si no especificamos localizacion la toma del sistema (es-ES) 
+    document.write(`<p>${fecha.toDateString()}</p>`);
+    document.write(`<p>${fecha.toUTCString()}</p>`);
+}
+fechaActual();  */
+
+/* Ejercicio 42
+Define una función que muestre la hora actual en diferentes formatos
+14:35:07 (hora detallada con minutos y segundos)
+02:35 PM o 02:35 AM (hora con minutos y AM o PM según sea antes o después del medio día). */
+
+/* function horaActual(){
+    let fecha=new Date();
+    document.write(`<p>${fecha.toLocaleTimeString()}</p>`); //Toma localizacion es-ES
+    document.write(`<p>${fecha.toLocaleTimeString("en-US")}</p>`); // Truco, Es el formato Yankee
+}
+horaActual();  */
+
+/* Ejercicio 43 
+Define una función que muestre el número de días que  quedan desde hoy hasta el fin de curso 
+(el 23 de junio del año proximo).
+*/
+/* function diasHastaFinDeCurso(){
+    let fechaActual=new Date();
+    let fechaFinDeCurso=new Date(2027,5,23);
+    let dias=(fechaFinDeCurso-fechaActual)/(1000*60*60*24);
+    document.write(`<p>Quedan ${Math.floor(dias)} dias hasta el fin de curso</p>`);
+}
+diasHastaFinDeCurso(); */
+
+//Ejercicio 44
+
+/*  Crea un programa que pida por parámetro tu cumpleaños (no hace falta el año) 
+ y saque todos los años en que tu cumpleaños va a caer en domingo desde este año hasta el año 2100. 
+ Por ejemplo, introducir el 05/23 para el día 23 de mayo. */
+
+ /* let cumpleaños=prompt("Dime tu fecha de cumpleaños en formato mm/dd");
+ const fechaCumpleaños = new Date(`"2026/${cumpleaños}"`);
+ //console.log(fechaCumpleaños.toDateString());
+ for(let i=2026;i<=2100;i++){
+     if(fechaCumpleaños.getDay()==0){
+         document.write(`<p>El dia ${fechaCumpleaños.toLocaleDateString()} es domingo</p>`);
+     }
+     fechaCumpleaños.setFullYear(i+1);
+ } */
+
+   //  Ejercicio 45
+
+  /*  Escribe una función para mostrar el día de la semana en formato corto:
+    ‘MO’, ‘TU’, ‘WE’, ‘TH’, ‘FR’, ‘SA’, ‘SU’. */
+/* function diaDeLaSemana(fecha){
+    const dias=['SU','MO', 'TU', 'WE', 'TH', 'FR', 'SA'];
+    return dias[fecha.getDay()];
+}
+   document.write(`Hoy es : ${diaDeLaSemana(new Date())}`); */
+   
+//Ejercicio 46
+/* Escribe una función que devuelva el último día del mes dado para un año dado.
+ A veces es 30, 31 o incluso 28/29 para febrero. */
+
+ /* function ultimoDiaMes(mes,anio){
+    let fecha=new Date(anio,mes,0);// EL TRUCO ESTA EN QUE AL PONER 0 LA FECHA QUE TOMA ES EL ULTIMO DIA DEL MES ANTERIOR, PERO COMO LOS MESES LOS EMPIZA EN 0  , TACHAN
+    document.write(`<p>El ultimo dia del mes ${mes} del año ${anio} es ${fecha.getDate()}</p>`);
+}
+ultimoDiaMes(2,2026); */
+
+//Ejercicio 47
+
+/* Escribe una función que devuelva la cantidad de segundos transcurridos desde el comienzo del día.
+ */
+
+/* function segundosDesdeInicioDia() {
+  const ahora = new Date();
+  const inicioDia = new Date(ahora.getFullYear(), ahora.getMonth(), ahora.getDate());
+  const segundos = Math.floor((ahora - inicioDia) / 1000);
+  // Alternativa: ahora.getHours() * 3600 + ahora.getMinutes() * 60 + ahora.getSeconds()
+  document( `Han pasado ${segundos} segundos desde las 00:00:00`);
+  return segundos;
+} */
